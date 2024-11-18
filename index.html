@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -12,128 +13,54 @@
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
             -ms-overflow-style: none;
+            /* IE and Edge */
             scrollbar-width: none;
+            /* Firefox */
         }
     </style>
 </head>
 
 <body class="bg-black text-white font-sans">
-    <!-- Main Container -->
-    <div class="flex flex-col md:flex-row h-screen no-scrollbar overflow-hidden">
-        <!-- Sidebar -->
-        <div class="w-full md:w-1/5 bg-gray-900 p-6 border-r border-gray-800">
-            <!-- Spotify Logo -->
-            <div class="flex items-center mb-6 justify-center md:justify-start">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg"
-                    alt="Spotify Logo" class="h-8">
-            </div>
-            <!-- Navigation -->
-            <nav class="space-y-6">
-                <a href="#"
-                    class="flex items-center space-x-3 text-lg font-semibold hover:text-green-500 transition-all duration-300 ease-in-out">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 20l-4-4 1.4-1.4L10 17.2l8.6-8.6L20 10l-10 10z"></path>
-                    </svg>
-                    <span>Your Library</span>
-                </a>
-                <button
-                    class="block w-full text-left text-sm mt-6 bg-gray-800 p-2 rounded-md text-gray-200 hover:bg-gray-700 transition-all duration-200">
-                    Create your first playlist
-                </button>
-                <button
-                    class="block w-full text-left text-sm bg-gray-800 p-2 rounded-md text-gray-200 hover:bg-gray-700 mt-4 transition-all duration-200">
-                    Let's find some podcasts to follow
-                </button>
-            </nav>
 
-            <!-- Footer Links -->
-            <div class="mt-8 text-xs text-gray-400 space-y-1 space-x-3 border-t border-gray-800 pt-4">
-                <a href="#" class="hover:text-white transition-all duration-200">Legal</a>
-                <a href="#" class="hover:text-white transition-all duration-200">Privacy Center</a>
-                <a href="#" class="hover:text-white transition-all duration-200">Cookies</a>
-                <a href="#" class="hover:text-white transition-all duration-200">About Ads</a>
-            </div>
-            <div class="mt-6 text-xs text-gray-400">
-                <button
-                    class="w-full bg-gray-800 p-2 rounded-md hover:bg-gray-700 transition-all duration-200">English</button>
-            </div>
+    <nav class="flex justify-between items-center p-4 border-b border-gray-800">
+        <!-- Left section: Logo -->
+        <div class="flex items-center space-x-4">
+            <a href="index.html">
+                <img src="https://martech.org/wp-content/uploads/2017/09/spotify-logo-1920x1080.jpg" alt="Spotify Logo" class="h-20 w-40 text-center"></a>
         </div>
-
-        <!-- Main Content -->
-        <div class="flex-1 p-4 md:p-6 overflow-y-scroll no-scrollbar">
-            <!-- Header Section -->
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0">
-                <div class="flex items-center bg-gray-800 px-4 py-2 rounded-lg w-full md:w-1/2">
-                    <input type="text" placeholder="What do you want to play?"
-                        class="w-full bg-transparent text-white focus:outline-none placeholder-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11 3a8 8 0 018 8 8 8 0 01-8 8 8 8 0 010-16zM21 21l-4.35-4.35" />
-                    </svg>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="signup.html" class="border border-white px-4 py-2 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-black text-center">
-                        Sign up
-                    </a>
-                    <a href="login.html" class="border border-white px-4 py-2 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-black text-center">
-                        Log in
-                    </a>
-                    
-                </div>
-            </div>
-
-            <!-- Featured Charts -->
-            <h2 class="text-2xl md:text-3xl font-bold mb-6">Featured Charts</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
-                <div class="bg-purple-700 p-6 rounded-lg transition-all duration-300 hover:shadow-xl">
-                    <h3 class="font-semibold">Top Songs Global</h3>
-                    <p class="text-gray-200 text-sm">Your weekly update of the most played tracks...</p>
-                </div>
-                <div class="bg-red-700 p-6 rounded-lg transition-all duration-300 hover:shadow-xl">
-                    <h3 class="font-semibold">Top Songs USA</h3>
-                    <p class="text-gray-200 text-sm">Your weekly update of the most played tracks...</p>
-                </div>
-                <div class="bg-blue-700 p-6 rounded-lg transition-all duration-300 hover:shadow-xl">
-                    <h3 class="font-semibold">Top 50 Global</h3>
-                    <p class="text-gray-200 text-sm">Your daily update of the most played tracks...</p>
-                </div>
-                <div class="bg-green-700 p-6 rounded-lg transition-all duration-300 hover:shadow-xl">
-                    <h3 class="font-semibold">Viral 50 Global</h3>
-                    <p class="text-gray-200 text-sm">Your daily update of the most viral tracks right now...</p>
-                </div>
-            </div>
+        <!-- Center section: Search bar with Home and Browse icons -->
+        <div class="flex items-center bg-gray-800 rounded-full px-4 py-2 flex-grow mx-4 max-w-md">
+            <button class="text-white hover:text-green-500 transition mr-4">
+                <i class="fas fa-home text-2xl"></i>
+            </button>
+            <input type="text" placeholder="What do you want to play?" class="w-full bg-transparent text-white focus:outline-none placeholder-gray-400">
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-400 px-6 py-10">
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            <div>
-                <h4 class="text-white font-semibold mb-4">Company</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">About</a></li>
-                </ul>
-            </div>
+        <!-- Right section: Sign up and Log in buttons -->
+        <div class="flex items-center space-x-4">
+            <a href="signup.html" class="text-gray-300 hover:text-white transition">Sign up</a>
+            <a href="login.html" class="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition font-semibold">Log in</a>
         </div>
-    </footer>
+    </nav>
+
     <script>
+        // Fetch Spotify token
         async function getSpotifyToken() {
             const clientId = '2ac838fe598a43a8bda04df8e1e30d58';
             const clientSecret = '5a0c737812ef4b8d8a36d0d264ff5878';
-    
+
             try {
                 const response = await fetch('https://accounts.spotify.com/api/token', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
-                        Authorization: 'Basic ' + btoa(clientId + ':' + clientSecret),
+                        Authorization: 'Basic ' + btoa(`${clientId}:${clientSecret}`),
                     },
                     body: 'grant_type=client_credentials',
                 });
-    
+
                 if (!response.ok) throw new Error(`Failed to fetch token: ${response.statusText}`);
                 const data = await response.json();
                 return data.access_token;
@@ -142,22 +69,23 @@
                 return null;
             }
         }
-    
+
+        // Fetch featured playlists
         async function fetchSpotifyData() {
             const token = await getSpotifyToken();
             if (!token) {
                 console.error('Cannot fetch playlists without a valid token');
                 return;
             }
-    
+
             try {
                 const apiUrl = 'https://api.spotify.com/v1/browse/featured-playlists';
                 const response = await fetch(apiUrl, {
                     headers: {
-                        Authorization: 'Bearer ' + token,
+                        Authorization: `Bearer ${token}`,
                     },
                 });
-    
+
                 if (!response.ok) throw new Error(`Failed to fetch playlists: ${response.statusText}`);
                 const data = await response.json();
                 displayPlaylists(data.playlists.items);
@@ -165,19 +93,21 @@
                 console.error('Error fetching Spotify playlists:', error);
             }
         }
-    
+
+        // Display playlists
         function displayPlaylists(playlists) {
             const container = document.querySelector('.grid');
             container.innerHTML = ''; // Clear existing content
-    
+
             if (!playlists.length) {
                 container.innerHTML = `<p class="text-gray-300">No playlists available at the moment.</p>`;
                 return;
             }
-    
+
             playlists.forEach((playlist) => {
                 const html = `
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg hover:bg-gray-700 hover:shadow-lg transition">
+                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg hover:bg-gray-700 hover:shadow-lg transition cursor-pointer" 
+                        data-playlist-id="${playlist.id}">
                         <img src="${playlist.images[0]?.url}" alt="${playlist.name}" class="rounded-lg mb-4">
                         <h3 class="font-semibold">${playlist.name}</h3>
                         <p class="text-sm text-gray-200">${playlist.description}</p>
@@ -185,11 +115,87 @@
                 `;
                 container.insertAdjacentHTML('beforeend', html);
             });
+
+            // Add event listeners to each playlist
+            const playlistItems = document.querySelectorAll('.grid div');
+            playlistItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const playlistId = e.currentTarget.dataset.playlistId;
+                    // Store the playlist ID in localStorage
+                    localStorage.setItem('selectedPlaylistId', playlistId);
+                    // Navigate to the playlist details page
+                    window.location.href = 'playlist.html'; // redirect to new page
+                });
+            });
         }
-    
+
+        // Fetch and display featured playlists on page load
         document.addEventListener('DOMContentLoaded', fetchSpotifyData);
+
     </script>
-    
+
+    <!-- Layout Container -->
+    <div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 bg-gray-900 p-6 border-r border-gray-800 flex-shrink-0">
+            <div class="mb-6 text-center md:text-left"></div>
+            <nav class="space-y-4">
+                <!-- Your Playlist with Plus Icon -->
+                <div class="flex items-center justify-between">
+                    <a href="#" class="flex items-center space-x-3 text-lg font-semibold hover:text-green-500 transition">
+                        <i class="fas fa-play-circle text-2xl"></i>
+                        <span>Your Library</span>
+                    </a>
+                    <button class="text-white hover:text-green-500 transition">
+                        <i class="fas fa-plus text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Info Buttons -->
+                <button class="block w-full text-left text-sm bg-gray-800 p-2 rounded-md hover:bg-gray-700 transition">
+                    <b>Create your first playlist</b><br>
+                    It's easy, we'll help you
+                </button>
+                <button class="block w-full text-left text-sm bg-gray-800 p-2 rounded-md hover:bg-gray-700 transition">
+                    <b>Let's find some podcasts to follow</b><br>
+                    We'll keep you updated on new episodes.
+                </button>
+
+            </nav>
+
+            <!-- Legal and Language Options -->
+            <div class="mt-8 text-xs text-gray-400 border-t border-gray-800 pt-4 space-y-2">
+                <a href="#" class="block hover:text-white transition">Legal</a>
+                <a href="#" class="block hover:text-white transition">Privacy Center</a>
+                <a href="#" class="block hover:text-white transition">Cookies</a>
+                <a href="#" class="block hover:text-white transition">About Ads</a>
+            </div>
+            <div class="mt-6 text-xs">
+                <button class="w-full bg-gray-800 p-2 rounded-md hover:bg-gray-700 transition">English</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-6 overflow-y-auto no-scrollbar">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-4 md:mb-8">
+                <h2 class="text-3xl font-bold mb-4">Welcome to Spotify Clone</h2>
+            </div>
+
+            <!-- Featured Charts -->
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Featured Charts</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-8">
+                <div class="bg-purple-700 p-4 md:p-6 rounded-lg hover:shadow-xl transition">
+                    <h3 class="font-semibold">Top Songs Global</h3>
+                    <p class="text-sm text-gray-300">The latest hit tracks from around the world</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="bg-black text-center text-sm text-gray-400 py-4 mt-8">
+        <p>© 2024 Spotify Clone. All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>
