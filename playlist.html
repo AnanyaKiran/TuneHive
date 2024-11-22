@@ -85,10 +85,12 @@
 
         async function fetchPlaylistDetails() {
             const playlistId = localStorage.getItem('selectedPlaylistId');
-            if (!playlistId) {
-                console.error('No playlist selected');
-                return;
-            }
+if (!playlistId) {
+    console.error('No playlist selected');
+    alert('No playlist selected. Please select a playlist from the homepage.');
+    return;
+}
+
 
             const token = await getSpotifyToken();
             if (!token) {
@@ -130,18 +132,22 @@
             }
 
             playlistTracks.innerHTML = '';
-            tracks.forEach(track => {
-                const trackItem = document.createElement('div');
-                trackItem.classList.add('flex', 'items-center', 'space-x-4', 'bg-gray-800', 'p-4', 'rounded-lg', 'hover:bg-gray-700', 'transition');
-                trackItem.innerHTML = `
-                    <div class="flex-1">
-                        <p class="text-lg font-semibold">${track.track.name}</p>
-                        <p class="text-sm text-gray-400">${track.track.artists.map(artist => artist.name).join(', ')}</p>
-                    </div>
-                    <div class="text-green-500 font-semibold">Play</div>
-                `;
-                playlistTracks.appendChild(trackItem);
-            });
+            tracks.forEach(item => {
+    const track = item.track; // Safeguard if item.track is null
+    if (!track) return;
+
+    const trackItem = document.createElement('div');
+    trackItem.classList.add('flex', 'items-center', 'space-x-4', 'bg-gray-800', 'p-4', 'rounded-lg', 'hover:bg-gray-700', 'transition');
+    trackItem.innerHTML = `
+        <div class="flex-1">
+            <p class="text-lg font-semibold">${track.name || "Unknown Track"}</p>
+            <p class="text-sm text-gray-400">${track.artists?.map(artist => artist.name).join(', ') || "Unknown Artist"}</p>
+        </div>
+        <div class="text-green-500 font-semibold">Play</div>
+    `;
+    playlistTracks.appendChild(trackItem);
+});
+
         }
 
         // Fetch playlist details on page load
